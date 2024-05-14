@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="redwall">
+  <link
+    name="base_link">
+    <!--<inertial>
+      <origin
+        xyz="-0.060357 0.082702 -0.015929"
+        rpy="0 0 0" />
+      <mass
+        value="1.2015" />
+      <inertia
+        ixx="0.0024916"
+        ixy="-0.00026475"
+        ixz="-3.8866E-05"
+        iyy="0.0028144"
+        iyz="-2.2136E-05"
+        izz="0.0048028" />
+    </inertial>-->
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.77647 0.75686 0.73725 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="lumbar">
+    <inertial>
+      <origin
+        xyz="0.0052643 -0.012448 0.077513"
+        rpy="0 0 0" />
+      <mass
+        value="1.4502" />
+      <inertia
+        ixx="0.0013727"
+        ixy="-1.0699E-06"
+        ixz="2.2405E-05"
+        iyy="0.0033655"
+        iyz="4.3647E-06"
+        izz="0.0034979" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/lumbar.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/lumbar.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="lumbar"
+    type="revolute">
+    <origin
+      xyz="-0.076 0.076 -0.016"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="lumbar" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="big_arm">
+    <inertial>
+      <origin
+        xyz="0.00011319 -0.12079 -0.034203"
+        rpy="0 0 0" />
+      <mass
+        value="0.66863" />
+      <inertia
+        ixx="0.0015317"
+        ixy="5.8543E-08"
+        ixz="-8.2823E-09"
+        iyy="0.00030356"
+        iyz="-6.108E-08"
+        izz="0.0016632" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/big_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/big_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="big_arm"
+    type="revolute">
+    <origin
+      xyz="-0.053512 0.014 0.099023"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="lumbar" />
+    <child
+      link="big_arm" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="small_arm">
+    <inertial>
+      <origin
+        xyz="0.035276 -0.093957 5.5065E-06"
+        rpy="0 0 0" />
+      <mass
+        value="0.67198" />
+      <inertia
+        ixx="0.00038552"
+        ixy="2.1528E-05"
+        ixz="-3.3983E-07"
+        iyy="0.00032191"
+        iyz="-1.0564E-07"
+        izz="0.00041472" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/small_arm.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/small_arm.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="small_arm"
+    type="revolute">
+    <origin
+      xyz="1.2306E-05 -0.21498 -0.0105"
+      rpy="0 0 -0.30425" />
+    <parent
+      link="big_arm" />
+    <child
+      link="small_arm" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="wrist">
+    <inertial>
+      <origin
+        xyz="0.00087927 0.002213 0.050733"
+        rpy="0 0 0" />
+      <mass
+        value="1.7041" />
+      <inertia
+        ixx="0.001032"
+        ixy="1.306E-05"
+        ixz="-4.2399E-06"
+        iyy="0.0003985"
+        iyz="-3.0063E-05"
+        izz="0.0010323" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/wrist.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/wrist.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="wrist"
+    type="revolute">
+    <origin
+      xyz="0.045929 -0.14627 0"
+      rpy="1.5708 0 0.30425" />
+    <parent
+      link="small_arm" />
+    <child
+      link="wrist" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="hand">
+    <inertial>
+      <origin
+        xyz="-1.7337E-05 -0.026365 0.035987"
+        rpy="0 0 0" />
+      <mass
+        value="0.41136" />
+      <inertia
+        ixx="0.00030793"
+        ixy="6.8464E-07"
+        ixz="3.2159E-08"
+        iyy="0.00024664"
+        iyz="-3.7274E-08"
+        izz="0.00035796" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/hand.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.84314 0.81569 0.55686 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/hand.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="hand"
+    type="revolute">
+    <origin
+      xyz="0 -0.035 0.10019"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="wrist" />
+    <child
+      link="hand" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  
+  <link
+    name="finger">
+    <inertial>
+      <origin
+        xyz="-8.2325E-05 -7.2826E-06 0.051498"
+        rpy="0 0 0" />
+      <mass
+        value="0.086637" />
+      <inertia
+        ixx="3.1953E-05"
+        ixy="-1.6941E-20"
+        ixz="-8.4703E-22"
+        iyy="1.6358E-05"
+        iyz="1.8166E-09"
+        izz="2.484E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/finger.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.2 0.2 0.2 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://redwall/meshes/finger.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="finger"
+    type="revolute">
+    <origin
+      xyz="0 -0.065987 0.036001"
+      rpy="1.5708 0 0" />
+    <parent
+      link="hand" />
+    <child
+      link="finger" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>
